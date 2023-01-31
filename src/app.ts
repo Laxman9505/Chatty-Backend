@@ -7,11 +7,17 @@ import { config } from "./config";
 
 class Application {
   public initialize(): void {
-    config.validateConfig();
+    this.loadConfig();
     databaseConnection();
+
     const app: Express = express();
     const chattyServer: ChattyServer = new ChattyServer(app);
     chattyServer.start();
+  }
+
+  public loadConfig(): void {
+    config.validateConfig();
+    config.cloudinaryConfig();
   }
 }
 
