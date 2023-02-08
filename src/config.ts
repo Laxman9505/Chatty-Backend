@@ -44,6 +44,7 @@ class Config {
       }
     }
   }
+
   public cloudinaryConfig(): void {
     cloudinary.v2.config({
       cloud_name: this.CLOUD_NAME,
